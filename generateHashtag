@@ -1,0 +1,5 @@
+function generateHashtag (str) {
+  let a = str.split(' ').map(item => item !== '' ? item[0].toUpperCase() + item.slice(1) : '' ).join('');
+  if(a.length >= 140 || a.length < 2) return false;
+  else return '#' + a;
+}
