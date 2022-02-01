@@ -1,0 +1,9 @@
+function getSum( a,b ) {
+  let result = 0;
+  let min = a < b ? a : b;
+   let max = a > b ? a : b;
+    for(min; min <= max; min++) {
+      result += min;
+    }
+  return result;
+}
