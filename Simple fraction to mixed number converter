@@ -5,7 +5,8 @@ function mixedFraction(s) {
   let fracPartS = '';
   let fracPartA = [];
   let result = '';
-  if(Math.abs(a[0]) > a[1] && a[0] % a[1] != 0) {
+  if(a[1] === 0) throw "ZeroDivisionError";
+  if(Math.abs(a[0]) > Math.abs(a[1]) && a[0] % a[1] != 0) {
     intPart = Math.trunc(a[0] / a[1]);
     fracPartS = `${a[0] - intPart * a[1]}/${a[1]}`;
     fracPartA = fracPartS.split('/').map(item => parseInt(item));
@@ -19,14 +20,16 @@ function mixedFraction(s) {
  } else if(a[0] == a[1] || a[0] % a[1] == 0) {
     intPart = a[0] / a[1];
     result = `${intPart}`
- } else {
+ } else if(a[1] != 0) {
       for(let i = 1000; i > 0; i--) {
       if(a[0] % i == 0 && a[1] % i == 0) {
         NOK = i;
-        result = `${a[0]/NOK}/${a[1]/NOK}`
+        if(a[0] < 0 && a[1] < 0) result = `${Math.abs(a[0]/NOK)}/${Math.abs(a[1]/NOK)}`;
+        else if(a[0] < 0 || a[1] < 0) result = `${-Math.abs(a[0]/NOK)}/${Math.abs(a[1]/NOK)}`; 
+        else result = `${a[0]/NOK}/${a[1]/NOK}`;
         break;
       } else continue;
   }
- }
+ } 
  return result;
 }
