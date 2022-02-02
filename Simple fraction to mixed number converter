@@ -1,0 +1,32 @@
+function mixedFraction(s) {
+  let a = s.split('/').map(item => parseInt(item));
+  let intPart = '';
+  let NOK = 0;
+  let fracPartS = '';
+  let fracPartA = [];
+  let result = '';
+  if(Math.abs(a[0]) > a[1] && a[0] % a[1] != 0) {
+    intPart = Math.trunc(a[0] / a[1]);
+    fracPartS = `${a[0] - intPart * a[1]}/${a[1]}`;
+    fracPartA = fracPartS.split('/').map(item => parseInt(item));
+      for(let i = 1000; i > 0; i--) {
+      if(fracPartA[0] % i == 0 && fracPartA[1] % i == 0) {
+        NOK = i;
+        result = `${intPart} ${Math.abs(fracPartA[0]/NOK)}/${Math.abs(fracPartA[1]/NOK)}`;
+        break;
+      } else continue;
+  } 
+ } else if(a[0] == a[1] || a[0] % a[1] == 0) {
+    intPart = a[0] / a[1];
+    result = `${intPart}`
+ } else {
+      for(let i = 1000; i > 0; i--) {
+      if(a[0] % i == 0 && a[1] % i == 0) {
+        NOK = i;
+        result = `${a[0]/NOK}/${a[1]/NOK}`
+        break;
+      } else continue;
+  }
+ }
+ return result;
+}
