@@ -1,0 +1,7 @@
+function hexStringToRGB(hexString) {
+  let a = {};
+  a.r = parseInt(hexString.substr(1,2), 16);
+  a.g = parseInt(hexString.substr(3,2), 16);
+  a.b = parseInt(hexString.substr(5,2), 16);
+  return a;
+}
