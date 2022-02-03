@@ -1,0 +1,5 @@
+function digPow(n, p){
+  let s = n.toString().split('').map((item, index, array) =>  Number(item) ** (p + index)).reduce((sum, current) => sum + current);
+  if(s % n == 0) return s / n;
+  else return -1;
+}
