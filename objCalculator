@@ -1,0 +1,12 @@
+let a = {
+    read() {
+        a.first = +prompt('First number');
+        a.second = +prompt('Second number');
+    },
+    sum() {
+    alert(`Summa = ${this.first + this.second}`);
+},
+    mul() {
+        alert(`Proizvedenie = ${this.first * this.second}`)
+    },
+}
