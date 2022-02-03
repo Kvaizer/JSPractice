@@ -1,0 +1,7 @@
+var solution = function(firstArray, secondArray) {
+  let averageArray =[];
+  for(let i = 0; i < firstArray.length; i++) {
+    averageArray.push((firstArray[i] - secondArray[i]) ** 2);
+  }
+ return averageArray.reduce((sum, current) => sum + current) / firstArray.length;
+}
