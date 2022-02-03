@@ -1,0 +1,5 @@
+const binaryArrayToNumber = arr => {
+ let s = arr.join('');
+  return parseInt(s, 2);
+
+};
