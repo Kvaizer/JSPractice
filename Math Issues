@@ -1,0 +1,20 @@
+Math.round = function(number) {
+  let a = number.toString().split('.');
+  if(a.length > 1) {
+    let arr = a[1].toString().split('');
+    if(arr[0] >= 5) return +a[0] + 1;
+    else return +a[0];
+  }
+  else return +a[0];
+};
+
+Math.ceil = function(number) {
+  let a = number.toString().split('.');
+  if(a.length > 1) return +a[0] + 1;
+  else return +a[0];
+  
+};
+
+Math.floor = function(number) {
+  let a = number.toString().split('.');
+  return +a[0];
