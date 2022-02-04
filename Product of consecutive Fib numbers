@@ -1,0 +1,21 @@
+function productFib(prod){
+  let result = [];
+  let aF = [0, 1];
+    for(let i = 1; i < 50; i++) {
+      aF.push(aF[i] + aF[i - 1])
+    };
+  let aFM = aF.map((item, index, array) => item = item * array[index + 1]);
+  let index = aFM.indexOf(prod)
+  if(index != -1) {
+    result.push(aF[index]);
+    result.push(aF[index + 1]);
+    result.push(true);
+  } else {
+    aFM.push(prod);
+    let index1 = aFM.sort((a, b) => a - b).indexOf(prod);
+    result.push(aF[index1 - 1]);
+    result.push(aF[index1]);
+    result.push(false);
+  }
+  return result;
+}
