@@ -1,0 +1,10 @@
+let beeramid = function(bonus, price) {
+  let counter = 0;
+  let i = 1;
+  let amountCans = Math.floor(bonus / price);
+  while(amountCans >= i ** 2) {
+    amountCans -= i ** 2;
+    i++;
+  }
+  return i - 1;
+}
