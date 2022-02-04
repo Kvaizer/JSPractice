@@ -1,0 +1,14 @@
+function Calculator() {
+this.read = function() {
+    this.firstNum = prompt('FirstNum');
+    this.secondNum = prompt('SecondNum');
+},
+this.sum = function() {
+    alert(`Summa: ${+this.firstNum + (+this.secondNum)}`);
+    return this;
+},
+this.mul = function() {
+    alert(`Mul\'ti: ${+this.firstNum * (+this.secondNum)}`);
+    return this;
+}
+}
