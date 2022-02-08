@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<body>
+    <script src = "https://code.jquery.com/jquery-2.1.0.js"></script>
+    <script>
+        let Car = function (x, y) {
+            this.x = x;
+            this.y = y;
+        };
+        Car.prototype.draw = function() {
+            this.carHtml = '<img src="http://nostarch.com/images/car.png">';
+            this.carElement = $(this.carHtml);
+            this.carElement.css ({
+                position: "absolute",
+                left: this.x,
+                top: this.y
+            });
+            $("body").append(this.carElement);
+        };
+        Car.prototype.moveRight = function() {
+            this.x += 5;
+            this.carElement.css({
+                left: this.x,
+                top: this.y
+            });
+        }
+        let tesla = new Car(20, 20);
+        let nissan = new Car(100, 200);
+        tesla.draw(20, 20);
+        nissan.draw(100, 200);
+    </script>
+</body>
+</html>
