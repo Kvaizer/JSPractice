@@ -1,0 +1,9 @@
+const binarySearch = (arr, finding) => {
+    // console.log(arr);
+    if (!arr.length) return null;
+    const mid = parseInt(arr.length / 2);
+
+    return (arr[mid] !== finding) ?
+        binarySearch((arr[mid] > finding) ? arr.slice(0, mid) : arr.slice(mid + 1), finding) :
+        arr[mid];
+};
